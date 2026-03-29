@@ -15,13 +15,18 @@ const taskSchema = new mongoose.Schema({
         enum: ['pending', 'completed'],
         default: 'pending',
     },
+    // Nayi field: Task kab complete hua
+    completedAt: {
+        type: Date,
+        default: null
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User', // User model se link kar rahe hain
+        ref: 'User',
         required: true,
     },
 }, {
-    timestamps: true,
+    timestamps: true, // Isse 'createdAt' apne aap mil jayega
 });
 
 module.exports = mongoose.model('Task', taskSchema);

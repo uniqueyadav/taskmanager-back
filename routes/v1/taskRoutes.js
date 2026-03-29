@@ -6,7 +6,7 @@ const {
     updateTask,
     deleteTask
 } = require('../../controllers/taskController');
-const { protect } = require('../../middleware/authMiddleware');
+const { protect, admin } = require('../../middleware/authMiddleware');
 
 // Saare Task routes protected hain (User must be logged in)
 router.route('/')
